@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/static/css-home/image_carousel.css">
+	  <link rel="stylesheet" type="text/css" href="static/css-home/drop_down.css">
+    
+    <link rel="stylesheet" type="text/css" href="static/css-home/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="static/css-home/default.css">
+	<link rel="stylesheet" type="text/css" href="static/css-home/search-form.css">
+    <link rel="stylesheet" type="text/css" href="static/css-home/my.css">
+</head>
+
+<body class="html-container">
+    <header>
+      
+      <nav>
+        
+        <ul id="main">
+            
+                
+            
+          <li>
+            <a href="/resume/">我</a>
+          
+            <!-- <ul class="drop">
+              <div>
+              <li>校内新闻</li>
+              <li>登录门户</li>
+              <li>校内公告</li>
+              </div>
+            </ul> -->
+          </li>
+          <!-- <li>教育教学
+            <ul class="drop">
+              <div>
+              <li>师资队伍</li>
+              <li>课程设置</li>
+              <li>海外学习</li>
+              </div>
+            </ul>
+          </li> -->
+          <li>
+            <a href="/xzmm/">精彩瞬间</a>         
+            
+            <!-- <ul class="drop">
+              <div>
+              <li>信科学院</li>
+              <li>医学预科</li>
+              <li>元培学院</li>
+              </div>
+            </ul> -->
+          </li>
+          <li>
+            <a href="/xls/diary">小蓝书</a>         
+            <ul class="drop">
+              <div>
+              <li><a href="/xls/diary">日记</a></li>
+              <li><a href="/xls/notebook">笔记</a></li>
+              <li><a href="/xls/photos">相册</a></li>
+              </div>
+            </ul>
+          </li>
+          <li>
+            <a href="/signin/">登录</a>
+          </li>
+          </li>
+          <!-- <li>
+            <button onclick="openDialog()">网页概述
+            </button>
+            
+    
+            <div class="modal" id="modal" style="display:none">
+                <div class="wrapper">
+                    <div class="closebtn" onclick="closeDialog()"> &nbsp;X&nbsp; </div>
+                    
+                    <div class="content1">
+                        <img class="opacity_img" src="images/10.png" alt="网页概览" >
+                        
+                    </div>
+                </div>
+            </div>  
+          </li> -->
+          <li>
+            <section class="htmleaf-container">
+              <form onsubmit="submitFn(this, event);">
+                      <div class="search-wrapper">
+                          <div class="input-holder">
+                              <input type="text" class="search-input" placeholder="Type to search" />
+                              <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+                          </div>
+                          <span class="close" onclick="searchToggle(this, event);"></span>
+                          <div class="result-container">
+          
+                          </div>
+                      </div>
+                  </form>
+            </section>
+            
+            
+          </li>
+          
+          
+          <div id="marker"></div>
+        </ul>
+        
+      </nav>
+      
+    </header>
+    
+    <div class="container">
+        <ul class='slider'>
+            <li class='item' style="background-image: url('/static/images-home/校门2.png')">
+                <div class='content'>
+                    <h2 class='title'>小蓝书</h2>
+                    <p class='description'> 记录你的生活</p>
+                    <!-- <button>Read More</button> -->
+                </div>
+            </li>
+            <li class='item' style="background-image: url('/static/images-home/博雅塔湖倒影.jpg') ">
+                <div class='content'>
+                    <h2 class='title'>小蓝书</h2>
+                    <p class='description'> 记录你的生活</p>
+                    <!-- <button>Read More</button> -->
+                </div>
+            </li>
+            <li class='item' style="background-image: url('/static/images-home/博雅塔红叶.png')">
+                <div class='content'>
+                    <h2 class='title'>小蓝书</h2>
+                    <p class='description'> 记录你的生活</p>
+                    <!-- <button>Read More</button> -->
+                </div>
+            </li>
+            <li class='item' style="background-image: url('/static/images-home/校园大道银杏.png')">
+                <div class='content'>
+                    <h2 class='title'>小蓝书</h2>
+                    <p class='description'> 记录你的生活</p>
+                    <!-- <button>Read More</button> -->
+                </div>
+            </li>
+            <li class='item' style="background-image: url('/static/images-home/3.png')">
+                <div class='content'>
+                    <h2 class='title'>小蓝书</h2>
+                    <p class='description'> 记录你的生活</p>
+                    <!-- <button>Read More</button> -->
+                </div>
+            </li>
+            <li class='item' style="background-image: url('/static/images-home/校门.jpeg')">
+                <div class='content'>
+                    <h2 class='title'>小蓝书</h2>
+                    <p class='description'> 记录你的生活</p>
+                    <!-- <button>Read More</button> -->
+                </div>
+            </li>
+        </ul>
+        <nav class='nav'>
+            <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+            <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        const slider = document.querySelector('.slider');
+
+        function activate(e) {
+            const items = document.querySelectorAll('.item');
+            e.target.matches('.next') && slider.append(items[0]);
+            e.target.matches('.prev') && slider.prepend(items[items.length - 1]);
+        }
+
+        document.addEventListener('click', activate, false);
+
+    </script>
+    <script src="static/js-home/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+          function searchToggle(obj, evt){
+              var container = $(obj).closest('.search-wrapper');
+
+              if(!container.hasClass('active')){
+                    container.addClass('active');
+                    evt.preventDefault();
+              }
+              else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+                    container.removeClass('active');
+                    // clear input
+                    container.find('.search-input').val('');
+                    // clear and hide result container when we press close
+                    container.find('.result-container').fadeOut(100, function(){$(this).empty();});
+              }
+          }
+
+          function submitFn(obj, evt){
+              value = $(obj).find('.search-input').val().trim();
+
+              _html = "";
+            //   if(!value.length){
+            //       _html = "";
+            //   }
+            //   else{
+            //       _html += "<b>" + value + "</b>";
+            //   }
+
+              $(obj).find('.result-container').html('<span>' + _html + '</span>');
+              $(obj).find('.result-container').fadeIn(100);
+
+              evt.preventDefault();
+              /*搜索框跳转google*/
+                var searchContent = $(obj).find('.search-input').val();
+                if (searchContent.trim() !== "") {
+                    var encodedSearchContent = encodeURIComponent(searchContent);
+                    var searchUrl = "https://www.google.com/search?q=" + encodedSearchContent;
+                    window.location.href = searchUrl;
+                } else {
+                    alert("请输入搜索内容");
+                }
+          }
+
+            function openDialog(){
+                document.getElementById('modal').style.display='';
+            }
+            function closeDialog(){
+                document.getElementById('modal').style.display='none';
+            }
+
+
+            
+            
+
+    
+      </script>
+</body>
+
+</html>
